@@ -487,7 +487,7 @@ fn check_features(
         .to_command();
 
     for dir in include_paths {
-        compiler.arg("-I");
+        compiler.arg("-idirafter");
         compiler.arg(dir.to_string_lossy().into_owned());
     }
     if !compiler
