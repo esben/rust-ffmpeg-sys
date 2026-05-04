@@ -202,6 +202,10 @@ fn find_sysroot() -> Option<String> {
         return None;
     }
 
+    if let Ok(sysroot) = env::var("FFMPEG_SYS_NEXT_SYSROOT") {
+        return Some(sysroot.to_string());
+    }
+
     if let Ok(sysroot) = env::var("SYSROOT") {
         return Some(sysroot.to_string());
     }
